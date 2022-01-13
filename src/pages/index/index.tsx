@@ -1,8 +1,10 @@
 import React from 'react';
 import { AppLayout } from '@/layouts';
-import HomeCard from './card.cpn';
-import HomeFilter from './filter.cpn';
-import HomeMap from './map.cpn';
+import {
+  HomeCardContainer,
+  HomeMapContainer,
+  HomeSidebarContainer,
+} from '@/containers/Home';
 
 export default function Home() {
   return (
@@ -11,9 +13,17 @@ export default function Home() {
       description=""
       className="home-page-wrapper"
     >
-      <HomeFilter />
-      <HomeCard />
-      <HomeMap />
+      <div className="d-flex position-relative">
+        <div className="col-2 py-4 map-container">
+          <HomeSidebarContainer />
+        </div>
+        <div className="col-6 py-4 section-container">
+          <HomeCardContainer />
+        </div>
+        <div className="col-4 px-2 py-1 map-container">
+          <HomeMapContainer />
+        </div>
+      </div>
     </AppLayout>
   );
 }
