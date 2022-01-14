@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-// import USFlag from '@/assets/images/icons/us-flag.svg';
+import { FaFlagUsa } from 'react-icons/fa';
 import './style.scss';
 
 // const footerItems = {
@@ -41,8 +41,7 @@ function AppFooter() {
 
         <div className="footer-language-unit">
           <Link to="/" className="btn footer-language">
-            {/* <span className="flag us" /> */}
-            {/* <USFlag className='flag' /> */}
+            <FaFlagUsa className="me-2" />
             United States
           </Link>
         </div>

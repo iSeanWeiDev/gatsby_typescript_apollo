@@ -3,7 +3,8 @@
   width: 100%;
   margin: 0;
   padding: 15px;
-  padding-bottom: 2px;
+  z-index: 999;
+  border-top: 1px solid lightgray;
 
   .container {
     ul {
@@ -15,7 +16,7 @@
       flex-wrap: wrap;
       align-items: center;
 
-      font-size: 12px;
+      font-size: 13px;
       text-align: center;
       width: 100%;
       max-width: 960px;
@@ -77,6 +78,10 @@
         width: 10px;
       }
     }
+  }
+  .bottom-notes {
+    text-transform: uppercase;
+    font-size: 14px;
   }
 }
 

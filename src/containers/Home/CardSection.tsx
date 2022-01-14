@@ -6,10 +6,13 @@ export default function CardSection() {
     <div className="home-card-section-container mx-4">
       <p className="main-heading">Sustainable Agriculture near Everywhere</p>
       <div className="form-group sort-menu row mb-3 hide d-flex justify-content-end align-items-center">
-        <label htmlFor="sortlocation" className="col-3 m-0">
+        <label
+          htmlFor="sortlocation"
+          className="col-3 m-0 d-flex align-items-center"
+        >
           Sort:
           <select
-            className="form-control form-control-sm col-9 pe-0"
+            className="form-control form-control-sm col-9 pe-0 shadow-none"
             name="sort"
             id="sortlocation"
           >

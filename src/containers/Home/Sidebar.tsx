@@ -1,5 +1,10 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
+import { ImLeaf } from 'react-icons/im';
+import { IoIosClose } from 'react-icons/io';
+import { HiCheck } from 'react-icons/hi';
+
+import Checkbox from 'react-custom-checkbox';
 
 const tags = [
   { id: 1, tag: `Offers Certificate` },
@@ -15,10 +20,10 @@ const features = [
 
 export default function Sidebar() {
   return (
-    <div className="home-sidebar-container">
+    <div className="sidebar">
       <div className="bl">
         <div className="d-flex align-items-center">
-          {/* Icon */}
+          <ImLeaf className="me-1 text-success fs-6" />
           <p className="filter-text">3 Filters</p>
         </div>
         <Link to="/">Clear All filters</Link>
@@ -26,16 +31,7 @@ export default function Sidebar() {
           <ul key={item.id}>
             <li>
               <span>{item.tag}</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-x ms-1 icon"
-                viewBox="0 0 16 16"
-              >
-                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-              </svg>
+              <IoIosClose className="fs-4 close-icon" />
             </li>
           </ul>
         ))}
@@ -45,47 +41,41 @@ export default function Sidebar() {
         <p>Features</p>
         {features.map((feature) => (
           <div key={feature.id} className="menu-item">
-            <input
-              type="checkbox"
-              name="certificate"
-              value={feature.value}
-              className="inp-cbx"
-              id="certificate"
+            <Checkbox
+              checked
+              icon={
+                <div className="cbx-icon">
+                  <HiCheck />
+                </div>
+              }
+              className="cbx"
+              labelClassName="pe-2"
+              label={feature.item}
             />
-            <label className="cbx" htmlFor="certificate">
-              <span>
-                <svg width="12px" height="9px" viewBox="0 0 12 9">
-                  <polyline points="1 5 4 8 11 1" />
-                </svg>
-              </span>
-              <span>{feature.item}</span>
-            </label>
           </div>
         ))}
       </div>
 
       <div className="bl checkboxes-container">
-        <p>Category</p>
+        <p>Features</p>
         {features.map((feature) => (
           <div key={feature.id} className="menu-item">
-            <input
-              type="checkbox"
-              name="certificate"
-              value={feature.value}
-              className="inp-cbx"
-              id="certificate"
+            <Checkbox
+              checked
+              icon={
+                <div className="cbx-icon">
+                  <HiCheck />
+                </div>
+              }
+              className="cbx"
+              labelClassName="pe-2"
+              label={feature.item}
             />
-            <label className="cbx" htmlFor="certificate">
-              <span>
-                <svg width="12px" height="9px" viewBox="0 0 12 9">
-                  <polyline points="1 5 4 8 11 1" />
-                </svg>
-              </span>
-              <span>{feature.item}</span>
-            </label>
           </div>
         ))}
       </div>
+
+      <Link to="/">View all</Link>
     </div>
   );
 }

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
+
+import { FaHammer, FaAppleAlt, FaLuggageCart } from 'react-icons/fa';
+
 import './style.scss';
 
 function Card() {
@@ -20,21 +23,24 @@ function Card() {
           </button>
         </div>
         <div className="bottom-intro">
-          <div>{/* Icons */}</div>
-          <p className="desc">
+          <div className="mb-3 fs-6">
+            <FaHammer className="me-1" />
+            <FaAppleAlt />
+          </div>
+          <div className="desc">
             We are a study-workshop of bioarchitecture, formed by a group of
             people who work in the development of sustainable habitats through
             architecture with natural materials, based on respect and
             understanding of the social and environmental context in which we
             live. We aim to open a... more
-          </p>
-          <div className="d-flex align-items-center text-with-icon">
-            {/* Icon */}
-            <p>Volunteers</p>
+          </div>
+          <div className="d-flex align-items-center text-with-icon mt-3">
+            <FaLuggageCart className="me-3 fs-5" />
+            Volunteers
           </div>
           <div className="d-flex align-items-end flex-column address">
-            <p>01 984 120 6636</p>
-            <p>Tulum, ROO MX</p>
+            <div>01 984 120 6636</div>
+            <div>Tulum, ROO MX</div>
           </div>
         </div>
       </div>
