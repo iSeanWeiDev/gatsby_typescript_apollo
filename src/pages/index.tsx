@@ -6,10 +6,17 @@ import { useAppQuery } from '@/utils/apollo';
 import { IPlaceFilter, IGeoLocation } from '@/types/place';
 import graphql from '@/graphql/external';
 
+type LeadPlaceFilterBy = {
+  search?: string;
+  location?: string;
+  features?: string[];
+  categories?: (string | number)[];
+};
+
 function Home() {
   const [size, setSize] = useState<number>(10);
   const [sortBy, setSortBy] = useState<string>();
-  const [filterBy, setFilterBy] = useState<object>();
+  const [filterBy, setFilterBy] = useState<LeadPlaceFilterBy>();
   const [geolocations, setGeolocations] = useState<IGeoLocation[]>();
 
   const { loading: pLoading, loadedData: pData } = useAppQuery({
@@ -36,24 +43,40 @@ function Home() {
   });
 
   const handleFilterChange = (value: IPlaceFilter[]) => {
-    const tmp = {
-      features: null,
-      categories: null,
-    };
     value.forEach((el) => {
       if (el.type === `feature`) {
-        tmp.features = tmp.features ? [...tmp.features, el.value] : [el.value];
+        setFilterBy({
+          ...filterBy,
+          features:
+            filterBy && filterBy.features.length > 0
+              ? [...filterBy.features, el.value]
+              : [el.value],
+        });
       }
       if (el.type === `category`) {
-        tmp.categories = tmp.categories ? [...tmp.categories, el.id] : [el.id];
+        setFilterBy({
+          ...filterBy,
+          categories:
+            filterBy && filterBy.categories.length > 0
+              ? [...filterBy.categories, el.id]
+              : [el.id],
+        });
       }
     });
-
-    setFilterBy(tmp);
   };
 
   const handleSortChange = (value: Option) => {
-    setSortBy(value.value);
+    if (value.value !== `CLOSEST`) {
+      setSortBy(value.value);
+    } else {
+      setFilterBy({
+        ...filterBy,
+        features:
+          filterBy && filterBy.features.length > 0
+            ? [...filterBy.features, `CLOSEST`]
+            : [`CLOSEST`],
+      });
+    }
   };
 
   const handleLoadMoreChange = () => {
