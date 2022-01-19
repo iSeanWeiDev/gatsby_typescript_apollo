@@ -1,9 +1,9 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-const useAppComponentQuery = () =>
+const useAppPageQuery = () =>
   useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logos/desktop.png" }) {
+      defaultLogo: file(relativePath: { eq: "post-default-thumb.jpg" }) {
         childImageSharp {
           gatsbyImageData
         }
@@ -11,4 +11,4 @@ const useAppComponentQuery = () =>
     }
   `);
 
-export default useAppComponentQuery;
+export default useAppPageQuery;

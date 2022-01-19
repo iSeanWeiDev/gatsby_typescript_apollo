@@ -1,3 +1,5 @@
+@import '@/assets/styles/_variables.scss';
+
 .app-cpn-header {
   position: fixed;
   width: 100%;
@@ -34,11 +36,12 @@
       }
     }
     .dropdown-container {
+      font-size: 15px;
+
       .search-fields {
         padding: 4px;
         width: 100% !important;
         max-width: 725px;
-        // font-size: 1rem
         line-height: 1.5;
         color: #495057;
         background-color: #fff;
@@ -58,7 +61,7 @@
           input {
             border: none;
             outline: none;
-            width: 97%;
+            width: 300px;
             padding: 0.4rem;
 
             &:focus {
@@ -140,18 +143,22 @@
     margin: 0;
     padding: 0;
     .nav-menu {
-      width: 60%;
       margin-bottom: 0;
+
       li {
         list-style-type: none;
+        text-align: center;
+        margin: 0px 5px 0;
         font-size: 15px;
-        color: #0099cc !important;
+        padding: 0 1rem;
+        color: $link-color;
         padding-bottom: 12px;
         border-bottom: 4px solid transparent;
         margin-bottom: -3px;
 
         &:hover {
           transition: all 0.3s ease;
+          color: $global-muted-text;
           border-bottom: 4px solid #24abd2;
         }
 
@@ -169,8 +176,11 @@
 
         .dropdown {
           position: relative;
-          // display: inline-block;
           color: #0099cc !important;
+
+          button {
+            font-size: 14px !important;
+          }
 
           &:hover {
             .dropdown-content {
@@ -212,7 +222,7 @@
               width: 100%;
 
               &:hover {
-                color: #009688 !important;
+                color: $global-muted-text !important;
               }
             }
           }

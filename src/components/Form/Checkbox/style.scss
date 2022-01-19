@@ -1,0 +1,30 @@
+.cbx {
+  height: 20px !important;
+  width: 20px !important;
+  border-radius: 50% !important;
+  border: 1px solid #b9b8c3 !important;
+  overflow: hidden;
+
+  &:hover {
+    border: 1px solid #009688 !important;
+  }
+}
+
+.cbx-icon {
+  height: 22px !important;
+  width: 20px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background-color: #009688;
+  border-radius: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.selected {
+  color: #B9B8C3;
+}

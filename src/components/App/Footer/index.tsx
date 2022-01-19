@@ -3,10 +3,6 @@ import { Link } from 'gatsby';
 import { FaFlagUsa } from 'react-icons/fa';
 import './style.scss';
 
-// const footerItems = {
-//   {id: 1, item: `About`, route: `/about`},
-// }
-
 function AppFooter() {
   return (
     <footer className="app-cpn-footer">

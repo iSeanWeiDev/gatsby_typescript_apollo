@@ -1,3 +1,11 @@
+import {
+  FaHammer,
+  FaAppleAlt,
+  FaLuggageCart,
+  FaCanadianMapleLeaf,
+  FaHistory,
+} from 'react-icons/fa';
+
 type NavbarMenu = {
   icon?: any;
   label: string;
@@ -15,4 +23,48 @@ export const searchOpts: NavbarMenu[] = [
   { label: `Retailer`, link: `` },
   { label: `Food & Beverage`, link: `` },
   { label: `Other`, link: `` },
+];
+
+export const buildings = [
+  {
+    id: 6,
+    text: `Environmental Conservation`,
+    Icon: FaHammer,
+    className: `icon-enviroment`,
+  },
+  { id: 1, text: `Eco Lodging`, Icon: FaAppleAlt, className: `icon-lodging` },
+  { id: 2, text: `Eco Tourism`, Icon: FaHammer, className: `icon-tourism` },
+  {
+    id: 3,
+    text: `Retailer`,
+    Icon: FaCanadianMapleLeaf,
+    className: `icon-retailer`,
+  },
+  { id: 4, text: `Food & Bevarage`, Icon: FaHammer, className: `icon-food` },
+  { id: 5, text: `Other`, Icon: FaLuggageCart, className: `icon-others` },
+];
+
+export const city = [
+  { id: 1, text: `San Diego, SU`, Icon: FaHistory },
+  { id: 2, text: `US, MS AE`, Icon: FaHistory },
+  { id: 3, text: `Canada, MS AE`, Icon: FaHistory },
+  { id: 4, text: `US, MS AE`, Icon: FaHistory },
+  { id: 5, text: `Malaysia, MS AE`, Icon: FaHistory },
+  { id: 6, text: `US, MS AE`, Icon: FaHistory },
+];
+
+export const navLinks = [
+  { id: 1, link: `Green Building`, Icon: FaHammer, className: `icon-building` },
+  {
+    id: 2,
+    link: `Sustainable Agriculture`,
+    Icon: FaAppleAlt,
+    className: `icon-agriculture`,
+  },
+  {
+    id: 3,
+    link: `Work Trade / Volunteer`,
+    Icon: FaLuggageCart,
+    className: `icon-work`,
+  },
 ];

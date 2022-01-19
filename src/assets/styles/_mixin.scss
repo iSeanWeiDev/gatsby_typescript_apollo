@@ -1,0 +1,77 @@
+// responsive media min width
+@mixin resp($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+// responsive media max width
+@mixin maxResp($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+// min and max responsive
+@mixin minmax($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+// font engine
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fontSize($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+// padding top bottom
+@mixin pad-tb($t, $b) {
+  padding-top: $t;
+  padding-bottom: $b;
+}
+
+// padding top bottom
+@mixin pad-lr($l, $r) {
+  padding-left: $l;
+  padding-right: $r;
+}
+
+// container padding
+%container {
+  height: 100%;
+  @include resp(400px) {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    @include pad-tb(30px, 30px);
+  }
+  @include minmax(490px, $lg) {
+    padding-left: 29px;
+    padding-right: 29px;
+    @include pad-tb(50px, 50px);
+  }
+  @include resp($lg) {
+    @include pad-tb(60px, 60px);
+  }
+}
