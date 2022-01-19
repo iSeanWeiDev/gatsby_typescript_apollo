@@ -100,6 +100,9 @@ function Home() {
           resources={pData ? pData.data : []}
           onSortChange={handleSortChange}
           onLoadMore={handleLoadMoreChange}
+          filterloading={ptLoading}
+          filterResources={ptData}
+          filterOnChange={handleFilterChange}
         />
         <HomeMap loading={pLoading} resources={geolocations} />
       </div>
