@@ -68,3 +68,67 @@ export const navLinks = [
     className: `icon-work`,
   },
 ];
+
+export const mobNavLinks = [
+  { id: 1, link: `Green Building`, Icon: FaHammer, className: `icon-building` },
+  {
+    id: 2,
+    link: `Sustainable Agriculture`,
+    Icon: FaAppleAlt,
+    className: `icon-agriculture`,
+  },
+  {
+    id: 3,
+    link: `Work Trade / Volunteer`,
+    Icon: FaLuggageCart,
+    className: `icon-work`,
+  },
+  {
+    id: 4,
+    link: `Environmental Conservation`,
+    Icon: FaLuggageCart,
+    className: `icon-work`,
+  },
+  {
+    id: 5,
+    link: `Eco Lodging`,
+    Icon: FaLuggageCart,
+    className: `icon-work`,
+  },
+  {
+    id: 6,
+    link: `Eco Tourism`,
+    Icon: FaLuggageCart,
+    className: `icon-work`,
+  },
+  {
+    id: 7,
+    link: `Retailer`,
+    Icon: FaLuggageCart,
+    className: `icon-work`,
+  },
+  {
+    id: 8,
+    link: `Food & Beverage`,
+    Icon: FaLuggageCart,
+    className: `icon-work`,
+  },
+  {
+    id: 9,
+    link: `Other`,
+    Icon: FaLuggageCart,
+    className: `icon-work`,
+  },
+  {
+    id: 10,
+    link: `About`,
+    Icon: FaLuggageCart,
+    className: `icon-work`,
+  },
+  {
+    id: 11,
+    link: `Contact`,
+    Icon: FaLuggageCart,
+    className: `icon-work`,
+  },
+];

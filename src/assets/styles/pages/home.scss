@@ -79,7 +79,7 @@
     @include resp($sm) {
       display: none !important;
     }
-    @include resp($md) {
+    @include maxResp($md) {
       display: none !important;
     }
     @include resp($lg) {
@@ -208,12 +208,79 @@
       }
     }
 
+    .filters {
+      border: 1px solid #ddd;
+      background: #fff;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .filter-number {
+        background-color: green;
+        color: #fff;
+        font-weight: 500;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 4px;
+        border-radius: 50%;
+      }
+
+      @include resp($xl) {
+        display: none !important;
+      }
+    }
+
+    .map-button {
+      cursor: pointer;
+      border-radius: 50%;
+      border: 1px solid #d2d2d2;
+      background: #fff;
+      height: 40px;
+      width: 40px;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      vertical-align: middle;
+      font-size: 17px !important;
+      color: seagreen;
+
+      @include maxResp($lg) {
+        display: flex !important;
+      }
+    }
+
+    .home-place-web {
+      @include maxResp($lg) {
+        display: none;
+      }
+    }
+
+    .home-place-mob {
+      display: none;
+
+      @include maxResp($lg) {
+        display: block !important;
+      }
+    }
+
     @include resp($lg) {
       margin-left: 0px !important;
     }
 
     @include resp($xl) {
       margin-left: 260px !important;
+    }
+
+    @include maxResp($md) {
+      background-color: #f8fcfb;
+      padding: 90px 15px 0;
     }
   }
 
@@ -222,10 +289,15 @@
     position: sticky;
     right: 10px;
     top: 140px;
+    z-index: 999;
 
-    @include resp($md) {
-      display: none;
+    @include maxResp($lg) {
+      display: block !important;
     }
+
+    // @include resp($md) {
+    //   display: none;
+    // }
     @include resp($lg) {
       display: block;
       width: 400px;

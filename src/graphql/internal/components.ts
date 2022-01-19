@@ -8,6 +8,11 @@ const useAppComponentQuery = () =>
           gatsbyImageData
         }
       }
+      mobLogo: file(relativePath: { eq: "event-placeholder.png" }) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
     }
   `);
 
