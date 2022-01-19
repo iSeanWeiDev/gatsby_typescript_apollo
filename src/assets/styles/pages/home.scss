@@ -278,26 +278,25 @@
       margin-left: 260px !important;
     }
 
+    @include maxResp($xl) {
+      padding: 120px 15px 0 !important;
+    }
+
     @include maxResp($md) {
       background-color: #f8fcfb;
-      padding: 90px 15px 0;
     }
   }
 
   .home-map {
-    height: calc(100vh - 150px);
+    height: calc(100vh - 330px);
     position: sticky;
     right: 10px;
-    top: 140px;
+    top: 220px !important;
     z-index: 999;
 
     @include maxResp($lg) {
-      display: block !important;
+      display: flex !important;
     }
-
-    // @include resp($md) {
-    //   display: none;
-    // }
     @include resp($lg) {
       display: block;
       width: 400px;
@@ -305,6 +304,8 @@
     @include resp($xl) {
       display: block;
       width: 392px;
+      height: calc(100vh - 150px) !important;
+      top: 140px !important;
     }
     @include resp($xxl) {
       display: block;
