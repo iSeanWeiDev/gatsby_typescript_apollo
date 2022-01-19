@@ -104,7 +104,7 @@ function HomeFilter({ loading, resources, onChange }: HomeFilterProps) {
     <div className="home-filters">
       <div className="selected-filters">
         <div className="title d-flex align-items-center">
-          <ImLeaf className="me-2" />
+          <ImLeaf className="me-2 leaf-icon" />
           <span className="filter-text">
             {filters.concat(moreFilters).length > 0
               ? `${filters.concat(moreFilters).length} Filter${
@@ -137,7 +137,7 @@ function HomeFilter({ loading, resources, onChange }: HomeFilterProps) {
       </div>
 
       <div className="filter-area">
-        <p className="title">Features</p>
+        <p className="title title-main">Features</p>
         {features.map((feature) => (
           <div key={feature.id} className="filter-item">
             <FormCheckbox

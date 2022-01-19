@@ -207,7 +207,11 @@ function HomePlaces({
               )}
         </div>
       </div>
-      <Offcanvas show={showFilters} onHide={handleClose}>
+      <Offcanvas
+        show={showFilters}
+        onHide={handleClose}
+        className="offcanvas-custom"
+      >
         <Offcanvas.Body>
           <HomeFilter
             loading={filterloading}

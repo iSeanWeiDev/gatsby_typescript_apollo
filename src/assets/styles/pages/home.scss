@@ -317,3 +317,58 @@
     }
   }
 }
+
+.offcanvas-custom {
+  width: 300px;
+  .selected-filters {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+  }
+  .filter-text,
+  .leaf-icon {
+    color: #009688;
+  }
+  .clear-all {
+    color: #0099cc;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      color: #24abd2;
+    }
+  }
+  .tags {
+    font-size: 12px;
+    margin: 10px 0 0 0;
+    background: #e1eae6;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-right: 10px;
+    svg {
+      cursor: pointer;
+      color: black;
+    }
+  }
+  .filter-area {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    .title {
+      font-weight: 600;
+      font-size: 16px;
+      margin: 8px 0 15px;
+    }
+    .filter-item {
+      margin-bottom: 0.8rem;
+      font-size: 14px;
+    }
+    .view-all {
+      color: #0099cc;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}
