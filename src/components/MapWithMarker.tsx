@@ -6,12 +6,27 @@ import {
   Marker,
 } from 'react-google-maps';
 
-const MapWithAMarker = withScriptjs(
-  withGoogleMap(() => (
-    <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
-      <Marker position={{ lat: -34.397, lng: 150.644 }} />
-    </GoogleMap>
-  )),
-);
+type MapWithMarkerProps = {
+  markData: any[];
+};
 
+const MapWithAMarker = withScriptjs(
+  withGoogleMap((props: MapWithMarkerProps) => {
+    const { markData } = props;
+    return (
+      <GoogleMap
+        defaultZoom={markData.length > 0 ? 3 : 8}
+        defaultCenter={{
+          lat: markData.length > 0 ? markData[0].latitude : 39.226,
+          lng: markData.length > 0 ? markData[0].longitude : -101.71,
+        }}
+      >
+        {markData &&
+          markData.map((el) => (
+            <Marker position={{ lat: el.latitude, lng: el.longitude }} />
+          ))}
+      </GoogleMap>
+    );
+  }),
+);
 export default MapWithAMarker;

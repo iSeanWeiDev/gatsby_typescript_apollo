@@ -16,3 +16,8 @@ export interface IBaseLayoutProps {
   lang?: string;
   children: React.ReactNode | Array<React.ReactNode>;
 }
+
+export interface ILabelValuePair {
+  label: string;
+  value: string | number;
+}

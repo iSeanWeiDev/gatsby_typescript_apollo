@@ -2,50 +2,16 @@ import React, { useState } from 'react';
 import { GoLocation } from 'react-icons/go';
 import { TiWorldOutline } from 'react-icons/ti';
 import { AiOutlinePlus, AiOutlineDown } from 'react-icons/ai';
-import {
-  FaHammer,
-  FaAppleAlt,
-  FaLuggageCart,
-  FaCanadianMapleLeaf,
-  FaHistory,
-} from 'react-icons/fa';
-
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { useAppNavbarQuery } from '@/graphql/internal';
-
+import { useAppComponentQuery } from '@/graphql/internal';
+import { buildings, city, navLinks } from './mock-data';
 import './style.scss';
 
-const buildings = [
-  { id: 6, text: `Environmental Conservation`, Icon: FaHammer },
-  { id: 1, text: `Eco Lodging`, Icon: FaAppleAlt },
-  { id: 2, text: `Eco Tourism`, Icon: FaHammer },
-  { id: 3, text: `Retailer`, Icon: FaCanadianMapleLeaf },
-  { id: 4, text: `Food & Bevarage`, Icon: FaHammer },
-  { id: 7, text: `Eco`, Icon: FaHammer },
-  { id: 5, text: `Other`, Icon: FaLuggageCart },
-  { id: 8, text: `Retailer`, Icon: FaHammer },
-];
-
-const city = [
-  { id: 1, text: `San Diego, SU`, Icon: FaHistory },
-  { id: 2, text: `US, MS AE`, Icon: FaHistory },
-  { id: 3, text: `Canada, MS AE`, Icon: FaHistory },
-  { id: 4, text: `US, MS AE`, Icon: FaHistory },
-  { id: 5, text: `Malaysia, MS AE`, Icon: FaHistory },
-  { id: 6, text: `US, MS AE`, Icon: FaHistory },
-];
-
-const navLinks = [
-  { id: 1, link: `Green Building`, Icon: FaHammer },
-  { id: 2, link: `Sustainable Agriculture`, Icon: FaAppleAlt },
-  { id: 3, link: `Work Trade / Volunteer`, Icon: FaLuggageCart },
-];
-
 function AppNavbar() {
-  const { logo } = useAppNavbarQuery();
-  const [fieldContentOpen, setFieldContentOpen] = useState(false);
-  const [cityContentOpen, setCityContentOpen] = useState(false);
+  const { logo } = useAppComponentQuery();
+  const [fieldContentOpen, setFieldContentOpen] = useState<boolean>(false);
+  const [cityContentOpen, setCityContentOpen] = useState<boolean>(false);
 
   const handleContentOpen = () => {
     setFieldContentOpen(!fieldContentOpen);
@@ -57,15 +23,15 @@ function AppNavbar() {
   };
 
   return (
-    <header className="app-cpn-header px-1">
+    <header className="app-cpn-header px-2 py-1">
       <div className="header-top d-flex align-items-center justify-content-between">
-        <div className="col-3 header-logo">
+        <div className="header-logo">
           <GatsbyImage image={getImage(logo)} alt="desktop logo" />
         </div>
-        <div className="col-6 dropdown-container">
+        <div className="dropdown-container">
           <div className="search-fields d-flex">
             <div className="col-6 dropdown">
-              <TiWorldOutline className="ps-2 pe-2 fs-1" />
+              <TiWorldOutline className="ps-2 pe-2 fs-1 icon-others" />
               <input
                 type="search"
                 placeholder="Search Green Building,Sustainable Agricult..."
@@ -87,7 +53,7 @@ function AppNavbar() {
               </div>
             </div>
             <div className="col-6 dropdown">
-              <GoLocation className="ps-2 pe-2 fs-3" />
+              <GoLocation className="ps-2 pe-2 fs-3 icon-others" />
               <input
                 type="search"
                 placeholder="City, State or Zip"
@@ -110,7 +76,7 @@ function AppNavbar() {
             </div>
           </div>
         </div>
-        <div className="col-3 d-flex pe-2 align-items-center justify-content-end">
+        <div className="d-flex pe-2 align-items-center justify-content-end">
           <button type="button" className="btn btn-1 d-flex align-items-center">
             <AiOutlinePlus className="me-1" />
             Add Organization
@@ -120,11 +86,12 @@ function AppNavbar() {
           </button>
         </div>
       </div>
+
       <div className="header-bottom d-flex align-items-center justify-content-center pt-4">
         <ul className="d-flex justify-content-between align-items-center nav-menu">
           {navLinks.map((navLink) => (
             <li key={navLink.id} className="d-flex align-items-center">
-              <navLink.Icon className="me-2" />
+              <navLink.Icon className={`me-2 ${navLink.className}`} />
               <Link to="/">{navLink.link}</Link>
             </li>
           ))}
@@ -137,7 +104,7 @@ function AppNavbar() {
               <div className="dropdown-content">
                 {buildings.map((item) => (
                   <Link key={item.id} to="/">
-                    <item.Icon className="me-3" />
+                    <item.Icon className={`me-3 ${item.className}`} />
                     {item.text}
                   </Link>
                 ))}

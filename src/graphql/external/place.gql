@@ -1,0 +1,102 @@
+fragment Place_place on Place {
+  id
+  name
+  description
+  placeType {
+    id
+    name
+    code
+    description
+    createdAt
+    updatedAt
+  }
+  logo {
+    id
+    name
+    type
+    links {
+      id
+      url
+      thumbnail
+      createdAt
+      updatedAt
+    }
+    description
+    createdAt
+    updatedAt
+  }
+  website
+  hasVolunteer
+  canCertificate
+  canRental
+  geolocation {
+    latitude
+    longitude
+  }
+  contactInfo {
+    email
+    phone1
+    phone2
+    fax
+  }
+  locationInfo {
+    address1
+    address2
+    city
+    state
+    zipcode
+    country
+  }
+  socials {
+    facebook
+    linkedin
+    youtube
+    twitter
+    instagram
+    vibo
+    airbnb
+  }
+  defaultLanguage {
+    id
+    name
+    local
+    code
+    createdAt
+    updatedAt
+  }
+  availableLanguages {
+    id
+    name
+    local
+    code
+    createdAt
+    updatedAt
+  }
+  likes
+  createdAt
+  updatedAt
+}
+
+query LoadPlaceTypes {
+  placeTypes {
+    id
+    name
+    code
+    description
+    createdAt
+    updatedAt
+  }
+}
+
+query LoadPlaces($filterBy: LeadPlaceFilterBy, $sortBy:  LEAD_PLACE_SORT_BY, $cursor: PageCursor) {
+  places(filterBy: $filterBy, sortBy: $sortBy, cursor: $cursor) {
+    data {
+      ...Place_place
+    }
+    pageInfo {
+      page
+      size
+      total
+    }
+  }
+}
