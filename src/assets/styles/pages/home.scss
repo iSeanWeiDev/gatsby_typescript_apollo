@@ -251,7 +251,7 @@
       vertical-align: middle;
       font-size: 17px !important;
       color: seagreen;
-
+      display: none;
       @include maxResp($lg) {
         display: flex !important;
       }
