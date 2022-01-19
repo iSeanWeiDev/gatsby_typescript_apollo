@@ -288,11 +288,10 @@
   }
 
   .home-map {
-    height: calc(100vh - 330px);
+    height: 100vh;
     position: sticky;
     right: 10px;
     top: 220px !important;
-    z-index: 999;
 
     @include maxResp($lg) {
       display: flex !important;
