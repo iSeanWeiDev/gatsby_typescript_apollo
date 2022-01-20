@@ -117,6 +117,13 @@
           .Dropdown-menu {
             border-bottom: 1px solid #ddd;
             color: #000;
+            background-color: $light-green;
+            .Dropdown-option{
+              border-bottom: 1px solid $light-gray-color;
+              &:hover{
+                background-color: $light-green;
+              }
+            }
           }
         }
       }
@@ -134,6 +141,10 @@
 
         &:hover {
           box-shadow: 0 0 20px #ddd;
+        }
+
+        @include maxResp($md) {
+          flex-flow: column;
         }
 
         .logo {
@@ -280,11 +291,12 @@
     }
 
     @include maxResp($xl) {
-      padding: 120px 15px 0 !important;
+      padding: 120px 15px 0 ;
     }
 
     @include maxResp($md) {
       background-color: #f8fcfb;
+      padding: 80px 15px 0 ;
     }
   }
 

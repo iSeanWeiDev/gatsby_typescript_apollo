@@ -407,6 +407,11 @@
       .search-fields {
         position: relative;
 
+        .input-group-text{
+          background-color: #fff;
+          padding: 0.5rem 0.5rem;
+        }
+
         .dropdown-content {
           position: absolute;
           top: 42px;

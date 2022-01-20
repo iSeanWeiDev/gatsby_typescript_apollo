@@ -210,7 +210,7 @@ function AppNavbar() {
             <div className="col-12 dropdown">
               <div className="input-group mb-3">
                 <span className="input-group-text" id="basic-addon1">
-                  <TiWorldOutline />
+                  <TiWorldOutline className={"fs-4 icon-others"}/>
                 </span>
                 <input
                   type="search"
@@ -239,7 +239,7 @@ function AppNavbar() {
             <div className="col-12 dropdown">
               <div className="input-group mb-3">
                 <span className="input-group-text" id="basic-addon1">
-                  <GoLocation />
+                  <GoLocation className={"fs-5 icon-others"}/>
                 </span>
                 <input
                   type="search"
