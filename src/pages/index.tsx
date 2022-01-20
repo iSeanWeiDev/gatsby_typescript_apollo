@@ -94,7 +94,7 @@ function Home() {
         resources={ptData}
         onChange={handleFilterChange}
       />
-      <div className="d-flex flex-grow-1">
+      <div className="d-flex flex-grow-1 mw-100">
         <HomePlaces
           loading={pLoading}
           resources={pData ? pData.data : []}

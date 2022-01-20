@@ -61,7 +61,7 @@ function HomePlaces({
 
   return (
     <>
-      <div className="home-place-wrapper">
+      <div className="home-place-wrapper mw-100">
         <div className="home-place-web">
           <p className="main-heading px-4 d-flex justify-content-between">
             <strong>Sustainable Agriculture near Everywhere</strong>
