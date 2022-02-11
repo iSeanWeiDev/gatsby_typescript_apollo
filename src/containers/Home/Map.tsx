@@ -15,7 +15,7 @@ export default function Map({ loading, resources }: HomeMapProps) {
         <AppSkeleton height="100%" />
       ) : (
         <MapWithAMarker
-          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnz-DRzCGY15PDKpYBPbDimETggn9qr8I&v=3.exp&libraries=geometry,drawing,places"
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=***&v=3.exp&libraries=geometry,drawing,places"
           loadingElement={<div className="w-100 h-100" />}
           containerElement={<div className="w-100 h-100" />}
           mapElement={<div className="w-100 h-100" />}
